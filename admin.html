@@ -1,1 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dalubwikaan Admin Portal</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- ================= SIDEBAR ================= -->
+
+<aside class="sidebar">
+
+
+<div class="brand">
+
+
+<h1>
+📚 Dalubwikaan
+</h1>
+
+
+<p>
+Admin Portal
+</p>
+
+
+</div>
+
+
+
+
+<nav>
+
+
+<a class="active">
+
+🏠 Dashboard
+
+</a>
+
+
+<a href="collections.html">
+
+💰 Collections
+
+</a>
+
+
+<a href="expenses.html">
+
+💸 Expenses
+
+</a>
+
+
+
+<a href="projects.html">
+
+📂 Projects
+
+</a>
+
+
+
+<a href="reports.html">
+
+📊 Reports
+
+</a>
+
+
+
+<a href="announcements.html">
+
+📢 Announcements
+
+</a>
+
+
+
+<a href="research.html">
+
+📖 Research Hub
+
+</a>
+
+
+
+</nav>
+
+
+
+
+
+<div class="sidebarBottom">
+
+
+<button id="themeToggle">
+
+🌙 Theme
+
+</button>
+
+
+
+<button id="logoutBtn">
+
+🚪 Logout
+
+</button>
+
+
+</div>
+
+
+
+</aside>
+
+
+
+
+
+
+
+
+
+<!-- ================= MAIN ================= -->
+
+
+<main class="dashboardMain">
+
+
+
+<header class="topbar">
+
+
+<div>
+
+
+<h2>
+Magsikhay. Manaliksik. Makatao.
+</h2>
+
+
+<p>
+Welcome back, Administrator 👋
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="adminProfile">
+
+
+<div class="avatar">
+
+👤
+
+</div>
+
+
+
+<div>
+
+
+<strong id="adminName">
+
+Admin
+
+</strong>
+
+
+<small id="adminRole">
+
+Administrator
+
+</small>
+
+
+</div>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+
+<!-- ================= HERO ================= -->
+
+
+<section class="heroCard">
+
+
+<div>
+
+
+<h1>
+
+Dalubwikaan Digital Portal
+
+</h1>
+
+
+<p>
+
+Isang makabagong sistema para sa
+pamamahala, pananaliksik, at paglilingkod.
+
+</p>
+
+
+
+</div>
+
+
+
+<div class="heroIcon">
+
+📚
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= STATISTICS ================= -->
+
+
+<section class="statsGrid">
+
+
+
+<div class="statCard">
+
+
+<div class="icon">
+
+💰
+
+</div>
+
+
+<div>
+
+<h3>
+Total Collection
+</h3>
+
+
+<h1 id="totalCollection">
+
+₱0
+
+</h1>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+<div class="statCard">
+
+
+<div class="icon">
+
+💸
+
+</div>
+
+
+<div>
+
+
+<h3>
+Total Expenses
+</h3>
+
+
+<h1 id="totalExpenses">
+
+₱0
+
+</h1>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="statCard">
+
+
+<div class="icon">
+
+📂
+
+</div>
+
+
+<div>
+
+
+<h3>
+Active Projects
+</h3>
+
+
+<h1 id="totalProjects">
+
+0
+
+</h1>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="statCard">
+
+
+<div class="icon">
+
+📢
+
+</div>
+
+
+<div>
+
+
+<h3>
+Announcements
+</h3>
+
+
+<h1 id="totalAnnouncements">
+
+0
+
+</h1>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= ANALYTICS ================= -->
+
+
+<section class="contentGrid">
+
+
+
+<div class="panel">
+
+
+<h2>
+📊 Financial Overview
+</h2>
+
+
+<div id="financialChart">
+
+
+<p>
+Loading analytics...
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+🕒 Recent Activity
+</h2>
+
+
+<div id="activityLogs">
+
+
+<p>
+No recent activity.
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- ================= QUICK ACTION ================= -->
+
+
+<section class="panel">
+
+
+<h2>
+
+Quick Management
+
+</h2>
+
+
+
+<div class="quickGrid">
+
+
+
+<button onclick="location.href='collections.html'">
+
+➕ Add Collection
+
+</button>
+
+
+
+<button onclick="location.href='expenses.html'">
+
+➕ Add Expense
+
+</button>
+
+
+
+
+<button onclick="location.href='projects.html'">
+
+➕ Create Project
+
+</button>
+
+
+
+
+<button onclick="location.href='announcements.html'">
+
+📢 Post Announcement
+
+</button>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 Dalubwikaan
+
+<br>
+
+Magsikhay. Manaliksik. Makatao.
+
+</p>
+
+
+</footer>
+
+
+
+
+
+
+<script type="module" src="js/dashboard.js"></script>
+
+<script type="module" src="js/auth.js"></script>
+
+<script src="js/theme.js"></script>
+
+
+
+</body>
+
+
+</html>
