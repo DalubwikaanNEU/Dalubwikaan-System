@@ -481,3 +481,504 @@ console.log(
 "🚀 Dashboard System Ready"
 
 );
+// =====================================================
+// DALUBWIKAAN PREMIUM DASHBOARD SYSTEM
+// DASHBOARD.JS
+// FIREBASE STATISTICS + CHART
+// =====================================================
+
+
+
+import {
+
+db
+
+}
+
+from "./firebase.js";
+
+
+
+import {
+
+collection,
+getDocs
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+
+
+
+// ===============================
+// LOAD DASHBOARD DATA
+// ===============================
+
+
+async function loadDashboard(){
+
+
+
+try{
+
+
+
+let totalCollection = 0;
+
+let totalExpenses = 0;
+
+let projectCount = 0;
+
+let announcementCount = 0;
+
+
+
+
+
+
+
+// ===============================
+// COLLECTIONS
+// ===============================
+
+
+
+const collectionsSnapshot =
+
+await getDocs(
+
+collection(
+
+db,
+
+"collections"
+
+)
+
+);
+
+
+
+
+
+
+
+collectionsSnapshot.forEach(doc=>{
+
+
+const data = doc.data();
+
+
+
+totalCollection +=
+
+
+Number(data.firstYear || 0)
+
++
+
+Number(data.secondYear || 0)
+
++
+
+Number(data.thirdYear || 0)
+
++
+
+Number(data.fourthYear || 0);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// ===============================
+// EXPENSES
+// ===============================
+
+
+
+const expensesSnapshot =
+
+await getDocs(
+
+collection(
+
+db,
+
+"expenses"
+
+)
+
+);
+
+
+
+
+
+
+
+expensesSnapshot.forEach(doc=>{
+
+
+const data = doc.data();
+
+
+
+totalExpenses +=
+
+Number(data.amount || 0);
+
+
+
+});
+
+
+
+
+
+
+
+
+
+// ===============================
+// PROJECTS
+// ===============================
+
+
+
+const projectsSnapshot =
+
+await getDocs(
+
+collection(
+
+db,
+
+"projects"
+
+)
+
+);
+
+
+
+projectCount =
+
+projectsSnapshot.size;
+
+
+
+
+
+
+
+
+
+// ===============================
+// ANNOUNCEMENTS
+// ===============================
+
+
+
+const announcementsSnapshot =
+
+await getDocs(
+
+collection(
+
+db,
+
+"announcements"
+
+)
+
+);
+
+
+
+announcementCount =
+
+announcementsSnapshot.size;
+
+
+
+
+
+
+
+
+
+// ===============================
+// DISPLAY
+// ===============================
+
+
+
+
+document.getElementById(
+"totalCollection"
+).innerHTML =
+
+
+"₱" +
+
+totalCollection.toLocaleString();
+
+
+
+
+
+
+document.getElementById(
+"totalExpenses"
+).innerHTML =
+
+
+"₱" +
+
+totalExpenses.toLocaleString();
+
+
+
+
+
+
+
+document.getElementById(
+"totalProjects"
+).innerHTML =
+
+projectCount;
+
+
+
+
+
+
+
+document.getElementById(
+"totalAnnouncements"
+).innerHTML =
+
+announcementCount;
+
+
+
+
+
+
+
+
+
+// CREATE CHART
+
+
+createChart(
+
+totalCollection,
+
+totalExpenses
+
+);
+
+
+
+
+
+
+
+console.log(
+"📊 Dashboard Connected"
+);
+
+
+
+
+}
+
+
+
+catch(error){
+
+
+console.error(
+
+"Dashboard Error:",
+
+error
+
+);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ===============================
+// CHART SYSTEM
+// ===============================
+
+
+
+function createChart(collections,expenses){
+
+
+
+const canvas =
+
+document.getElementById(
+"financeChart"
+);
+
+
+
+
+
+if(!canvas)
+
+return;
+
+
+
+
+
+
+
+new Chart(
+
+canvas,
+
+{
+
+
+type:"doughnut",
+
+
+
+data:{
+
+
+
+labels:[
+
+"Collections",
+
+"Expenses"
+
+],
+
+
+
+
+datasets:[{
+
+
+data:[
+
+collections,
+
+expenses
+
+]
+
+
+
+}]
+
+
+
+
+},
+
+
+
+
+
+options:{
+
+
+responsive:true,
+
+
+plugins:{
+
+
+
+legend:{
+
+
+position:"bottom"
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+
+
+}
+
+);
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ===============================
+// START
+// ===============================
+
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+
+loadDashboard();
+
+
+}
+
+);
