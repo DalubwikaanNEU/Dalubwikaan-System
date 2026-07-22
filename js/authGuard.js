@@ -1,15 +1,19 @@
-import {
+// =====================================================
+// MAGSIKHAY AUTH GUARD
+// ADMIN PAGE PROTECTION
+// =====================================================
 
-auth
 
-}
+import { auth }
 
 from "./firebase.js";
 
 
+
 import {
 
-onAuthStateChanged
+onAuthStateChanged,
+signOut
 
 }
 
@@ -21,7 +25,13 @@ from
 
 
 
+// ===============================
+// CHECK LOGIN
+// ===============================
+
+
 onAuthStateChanged(auth,(user)=>{
+
 
 
 if(!user){
@@ -29,7 +39,7 @@ if(!user){
 
 
 alert(
-"🔒 Admin access only"
+"🔒 Admin access only."
 );
 
 
@@ -40,6 +50,74 @@ window.location.href="login.html";
 
 }
 
+else{
+
+
+console.log(
+
+"✅ Admin verified:",
+user.email
+
+);
+
+
+}
+
 
 
 });
+
+
+
+
+
+
+
+
+// ===============================
+// LOGOUT
+// ===============================
+
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+
+const logoutBtn =
+
+document.getElementById(
+"logoutBtn"
+);
+
+
+
+
+if(logoutBtn){
+
+
+logoutBtn.onclick=async()=>{
+
+
+
+await signOut(auth);
+
+
+
+window.location.href="login.html";
+
+
+
+};
+
+
+
+}
+
+
+
+}
+
+);
