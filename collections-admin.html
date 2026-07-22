@@ -226,25 +226,91 @@ class="quickGrid button"
 
 
 
-
-
-
-
 <section class="panel">
 
 
 <h2>
-
 📋 Collection Records
-
 </h2>
+
+
+
+<div class="searchArea">
+
+
+<input
+
+id="searchCollection"
+
+placeholder="🔍 Search collector or week..."
+
+>
+
+
+
+<select id="yearFilter">
+
+
+<option value="all">
+
+All Year Levels
+
+</option>
+
+
+<option value="firstYear">
+
+1st Year
+
+</option>
+
+
+<option value="secondYear">
+
+2nd Year
+
+</option>
+
+
+<option value="thirdYear">
+
+3rd Year
+
+</option>
+
+
+<option value="fourthYear">
+
+4th Year
+
+</option>
+
+
+
+</select>
+
+
+
+</div>
+
+
+
+
+
+<div id="collectionSummary">
+
+
+Loading summary...
+
+</div>
+
 
 
 
 <div id="collectionList">
 
 
-Loading...
+Loading collections...
 
 </div>
 
