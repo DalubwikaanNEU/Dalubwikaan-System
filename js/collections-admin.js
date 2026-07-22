@@ -1,5 +1,5 @@
 // =====================================================
-// DALUBWIKAAN COLLECTION MANAGEMENT
+// DALUBWIKAAN COLLECTION MANAGEMENT PRO
 // =====================================================
 
 
@@ -18,7 +18,8 @@ addDoc,
 getDocs,
 deleteDoc,
 doc,
-updateDoc
+updateDoc,
+getDoc
 
 }
 
@@ -30,6 +31,8 @@ from
 
 
 
+let collectionsData = [];
+
 let editID = null;
 
 
@@ -40,7 +43,8 @@ let editID = null;
 
 
 
-// ================= SAVE =================
+// ================= SAVE COLLECTION =================
+
 
 
 window.saveCollection = async function(){
@@ -51,69 +55,44 @@ const data = {
 
 
 week:
-
 document.getElementById("week").value,
 
 
-
 date:
-
 document.getElementById("collectionDate").value,
 
 
 
 firstYear:
-
-Number(
-
-document.getElementById("firstYear").value || 0
-
-),
+Number(document.getElementById("firstYear").value || 0),
 
 
 
 secondYear:
-
-Number(
-
-document.getElementById("secondYear").value || 0
-
-),
+Number(document.getElementById("secondYear").value || 0),
 
 
 
 thirdYear:
-
-Number(
-
-document.getElementById("thirdYear").value || 0
-
-),
+Number(document.getElementById("thirdYear").value || 0),
 
 
 
 fourthYear:
-
-Number(
-
-document.getElementById("fourthYear").value || 0
-
-),
+Number(document.getElementById("fourthYear").value || 0),
 
 
 
 collector:
-
 document.getElementById("collector").value,
 
 
 
-createdAt:
-
+updatedAt:
 new Date()
 
-};
 
+};
 
 
 
@@ -126,6 +105,7 @@ try{
 
 
 if(editID){
+
 
 
 await updateDoc(
@@ -147,7 +127,7 @@ data
 
 
 alert(
-"✅ Updated"
+"✏️ Collection Updated"
 );
 
 
@@ -160,8 +140,8 @@ editID=null;
 
 
 
-else{
 
+else{
 
 
 await addDoc(
@@ -174,14 +154,20 @@ db,
 
 ),
 
-data
+{
+
+...data,
+
+createdAt:new Date()
+
+}
 
 );
 
 
 
 alert(
-"✅ Saved"
+"✅ Collection Saved"
 );
 
 
@@ -212,7 +198,7 @@ console.error(error);
 
 
 alert(
-"❌ Error saving data"
+"❌ Saving failed"
 );
 
 
@@ -231,18 +217,12 @@ alert(
 
 
 
+
 // ================= LOAD =================
 
 
 
 async function loadCollections(){
-
-
-const box =
-
-document.getElementById(
-"collectionList"
-);
 
 
 
@@ -260,37 +240,105 @@ db,
 
 
 
-box.innerHTML="";
-
-
+collectionsData=[];
 
 
 
 snapshot.forEach(item=>{
 
 
-const d=item.data();
+collectionsData.push({
 
+id:item.id,
+
+...item.data()
+
+});
+
+
+});
+
+
+
+
+
+displayCollections(collectionsData);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// ================= DISPLAY =================
+
+
+
+function displayCollections(data){
+
+
+
+const box =
+
+document.getElementById(
+"collectionList"
+);
+
+
+
+const summary =
+
+document.getElementById(
+"collectionSummary"
+);
+
+
+
+
+
+box.innerHTML="";
+
+
+
+let grandTotal=0;
+
+
+
+
+
+data.forEach(item=>{
 
 
 
 const total =
 
 
-Number(d.firstYear)
+Number(item.firstYear||0)
 
 +
 
-Number(d.secondYear)
+Number(item.secondYear||0)
 
 +
 
-Number(d.thirdYear)
+Number(item.thirdYear||0)
 
 +
 
-Number(d.fourthYear);
+Number(item.fourthYear||0);
 
+
+
+
+grandTotal+=total;
 
 
 
@@ -305,33 +353,66 @@ box.innerHTML += `
 
 <h3>
 
-💰 ${d.week}
+💰 ${item.week}
+
+</h3>
+
+
+<p>
+📅 ${item.date}
+</p>
+
+
+<p>
+👤 ${item.collector}
+</p>
+
+
+<hr>
+
+
+<p>
+1st Year:
+₱${Number(item.firstYear).toLocaleString()}
+</p>
+
+
+<p>
+2nd Year:
+₱${Number(item.secondYear).toLocaleString()}
+</p>
+
+
+
+<p>
+3rd Year:
+₱${Number(item.thirdYear).toLocaleString()}
+</p>
+
+
+<p>
+4th Year:
+₱${Number(item.fourthYear).toLocaleString()}
+</p>
+
+
+
+<h3>
+
+Total:
+
+₱${total.toLocaleString()}
 
 </h3>
 
 
 
-<p>
 
-Collector:
+<button onclick="editCollection('${item.id}')">
 
-${d.collector}
+✏️ Edit
 
-</p>
-
-
-
-<p>
-
-Total:
-
-<strong>
-
-₱${total.toLocaleString()}
-
-</strong>
-
-</p>
+</button>
 
 
 
@@ -350,8 +431,180 @@ Total:
 
 
 
+});
+
+
+
+
+
+summary.innerHTML = `
+
+
+
+<h3>
+
+💰 Overall Collection:
+
+₱${grandTotal.toLocaleString()}
+
+</h3>
+
+
+<p>
+
+Records:
+${data.length}
+
+</p>
+
+
+`;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+// ================= SEARCH =================
+
+
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+()=>{
+
+
+
+loadCollections();
+
+
+
+
+
+document
+.getElementById("searchCollection")
+.addEventListener(
+
+"input",
+
+filterCollections
+
+);
+
+
+
+document
+.getElementById("yearFilter")
+.addEventListener(
+
+"change",
+
+filterCollections
+
+);
+
+
+
+}
+
+);
+
+
+
+
+
+
+
+
+
+function filterCollections(){
+
+
+
+const keyword =
+
+document
+.getElementById("searchCollection")
+.value
+.toLowerCase();
+
+
+
+
+
+const year =
+
+document
+.getElementById("yearFilter")
+.value;
+
+
+
+
+
+
+
+const filtered = collectionsData.filter(item=>{
+
+
+
+let match =
+
+
+item.week
+.toLowerCase()
+.includes(keyword)
+
+||
+
+item.collector
+.toLowerCase()
+.includes(keyword);
+
+
+
+
+
+
+
+if(year==="all")
+
+return match;
+
+
+
+
+
+
+
+return (
+
+match
+
+&&
+
+Number(item[year]||0)>0
+
+);
+
+
 
 });
+
+
+
+
+
+displayCollections(filtered);
 
 
 
@@ -367,15 +620,15 @@ Total:
 
 
 
-// ================= DELETE =================
+// ================= EDIT =================
 
 
 
-window.deleteCollection = async function(id){
+window.editCollection = async function(id){
 
 
 
-await deleteDoc(
+const snap = await getDoc(
 
 doc(
 
@@ -391,8 +644,85 @@ id
 
 
 
+const data=snap.data();
+
+
+
+
+document.getElementById("week").value=data.week;
+
+document.getElementById("collectionDate").value=data.date;
+
+
+document.getElementById("firstYear").value=data.firstYear;
+
+
+document.getElementById("secondYear").value=data.secondYear;
+
+
+document.getElementById("thirdYear").value=data.thirdYear;
+
+
+document.getElementById("fourthYear").value=data.fourthYear;
+
+
+document.getElementById("collector").value=data.collector;
+
+
+
+
+editID=id;
+
+
+
 alert(
-"Deleted"
+"✏️ Editing mode"
+);
+
+
+
+};
+
+
+
+
+
+
+
+
+
+// ================= DELETE =================
+
+
+
+window.deleteCollection=async function(id){
+
+
+
+if(
+!confirm(
+"Delete this collection?"
+)
+
+)
+
+return;
+
+
+
+
+await deleteDoc(
+
+doc(
+
+db,
+
+"collections",
+
+id
+
+)
+
 );
 
 
@@ -414,29 +744,15 @@ loadCollections();
 function clearForm(){
 
 
+
 document
 .querySelectorAll("input")
 .forEach(
 
-input=>input.value=""
+e=>e.value=""
 
 );
 
 
 
 }
-
-
-
-
-
-
-
-
-document.addEventListener(
-
-"DOMContentLoaded",
-
-loadCollections
-
-);
