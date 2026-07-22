@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Dalubwikaan Collection Manager
+</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+</head>
+
+
+
+<body>
+
+
+
+<aside class="sidebar">
+
+
+<div class="brand">
+
+<h1>
+📚 Dalubwikaan
+</h1>
+
+<p>
+Collection Manager
+</p>
+
+</div>
+
+
+
+<nav>
+
+
+<a href="admin.html">
+
+🏠 Dashboard
+
+</a>
+
+
+<a class="active">
+
+💰 Collections
+
+</a>
+
+
+
+</nav>
+
+
+
+</aside>
+
+
+
+
+
+
+
+<main class="dashboardMain">
+
+
+
+<header class="topbar">
+
+
+<div>
+
+<h2>
+
+💰 Collection Management
+
+</h2>
+
+
+<p>
+
+Manage weekly contributions
+
+</p>
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<section class="panel">
+
+
+<h2>
+
+➕ Add Collection
+
+</h2>
+
+
+
+<input
+
+id="week"
+
+placeholder="Week / Month"
+
+>
+
+
+
+<input
+
+id="collectionDate"
+
+type="date"
+
+>
+
+
+
+
+
+<input
+
+id="firstYear"
+
+type="number"
+
+placeholder="1st Year Amount"
+
+>
+
+
+
+
+
+<input
+
+id="secondYear"
+
+type="number"
+
+placeholder="2nd Year Amount"
+
+>
+
+
+
+
+
+<input
+
+id="thirdYear"
+
+type="number"
+
+placeholder="3rd Year Amount"
+
+>
+
+
+
+
+
+<input
+
+id="fourthYear"
+
+type="number"
+
+placeholder="4th Year Amount"
+
+>
+
+
+
+
+
+<input
+
+id="collector"
+
+placeholder="Collector Name"
+
+>
+
+
+
+
+<button
+
+onclick="saveCollection()"
+
+class="quickGrid button"
+
+>
+
+💾 Save Collection
+
+</button>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<section class="panel">
+
+
+<h2>
+
+📋 Collection Records
+
+</h2>
+
+
+
+<div id="collectionList">
+
+
+Loading...
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+
+<script type="module" src="js/collections-admin.js"></script>
+
+
+
+</body>
+
+</html>
