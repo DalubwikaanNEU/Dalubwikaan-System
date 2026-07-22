@@ -1,62 +1,99 @@
 // =====================================================
-// DALUBWIKAAN FIREBASE CONNECTION
+// MAGSIKHAY FIREBASE SYSTEM
+// FIREBASE CONNECTION FILE
 // =====================================================
 
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+// FIREBASE APP
 
+import {
+
+initializeApp
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+
+
+
+
+
+// FIRESTORE
 
 import {
 
 getFirestore
 
 }
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
+from
+
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+
+
+
+
+// AUTHENTICATION
 
 import {
 
 getAuth
 
 }
-from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
+from
+
+"https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 
 
 
-// ================= FIREBASE CONFIG =================
+
+
+
+// =====================================================
+// FIREBASE CONFIGURATION
+// =====================================================
 
 
 const firebaseConfig = {
 
 
 apiKey:
+
 "AIzaSyBzo7AfReNUHrXf0FEqfAW5h0oQ-fN1ij8",
 
 
 
 authDomain:
+
 "dalubwikaan-system.firebaseapp.com",
 
 
 
 projectId:
+
 "dalubwikaan-system",
 
 
 
 storageBucket:
+
 "dalubwikaan-system.firebasestorage.app",
 
 
 
 messagingSenderId:
+
 "74868534824",
 
 
 
 appId:
+
 "1:74868534824:web:06b15dacd299d69e754f1d"
 
 
@@ -65,7 +102,12 @@ appId:
 
 
 
-// ================= INITIALIZE =================
+
+
+
+// =====================================================
+// INITIALIZE FIREBASE
+// =====================================================
 
 
 const app = initializeApp(firebaseConfig);
@@ -73,18 +115,26 @@ const app = initializeApp(firebaseConfig);
 
 
 
-// FIRESTORE
+
+// FIRESTORE DATABASE
 
 export const db = getFirestore(app);
 
 
 
-// AUTH
+
+
+// AUTH SYSTEM
 
 export const auth = getAuth(app);
 
 
 
+
+
+
 console.log(
-"🔥 Dalubwikaan Firebase Connected"
+
+"🔥 Magsikhay Firebase Connected"
+
 );
