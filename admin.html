@@ -2,24 +2,22 @@
 
 <html lang="en">
 
-
 <head>
 
-
 <meta charset="UTF-8">
-
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 <title>
-Magsikhay Admin Dashboard
+Magsikhay | Admin Dashboard
 </title>
-
 
 
 <link rel="stylesheet" href="css/style.css">
 
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 
 </head>
@@ -29,8 +27,10 @@ Magsikhay Admin Dashboard
 <body>
 
 
+<!-- ================= HEADER ================= -->
 
-<header>
+
+<header class="adminHeader">
 
 
 <div class="logo">
@@ -41,12 +41,25 @@ Magsikhay Admin Dashboard
 
 
 
+<div class="adminActions">
+
+
+<button id="themeToggle">
+
+🌙 Dark Mode
+
+</button>
+
+
+
 <button id="logoutBtn">
 
 🚪 Logout
 
 </button>
 
+
+</div>
 
 
 </header>
@@ -55,8 +68,14 @@ Magsikhay Admin Dashboard
 
 
 
+<!-- ================= MAIN ================= -->
 
-<section class="section">
+
+<main class="container">
+
+
+
+<section class="hero">
 
 
 <h1>
@@ -66,13 +85,15 @@ Admin Dashboard
 </h1>
 
 
-
 <p>
 
-Manage researches, announcements, and content.
+Magsikhay Management System
+
+<br>
+
+Magsikhay. Manaliksik. Makatao.
 
 </p>
-
 
 
 </section>
@@ -82,25 +103,27 @@ Manage researches, announcements, and content.
 
 
 
-<section class="section">
 
 
+<!-- ================= STATISTICS ================= -->
 
-<div id="stats"
 
-class="researchGrid">
+<section class="dashboardGrid">
 
 
 
 <div class="card">
 
+
 <h2>
-📚 Research
+📚 Researches
 </h2>
 
 
 <h1 id="researchCount">
+
 0
+
 </h1>
 
 
@@ -119,7 +142,9 @@ class="researchGrid">
 
 
 <h1 id="announcementCount">
+
 0
+
 </h1>
 
 
@@ -128,6 +153,21 @@ class="researchGrid">
 
 
 
+<div class="card">
+
+
+<h2>
+👤 Admin Status
+</h2>
+
+
+<h1>
+
+ONLINE
+
+</h1>
+
+
 </div>
 
 
@@ -140,22 +180,108 @@ class="researchGrid">
 
 
 
-<section class="section">
 
 
-<div class="card">
+<!-- ================= ADD RESEARCH ================= -->
+
+
+
+<section class="card">
 
 
 <h2>
-✍️ Add Research
+
+✍️ Publish Research
+
 </h2>
 
 
 
-<input 
+
+<input
+
 id="title"
+
+type="text"
+
 placeholder="Research Title"
+
 >
+
+
+
+
+<input
+
+id="author"
+
+type="text"
+
+placeholder="Author Name"
+
+>
+
+
+
+
+<select id="category">
+
+
+<option value="Linggwistika">
+
+Linggwistika
+
+</option>
+
+
+<option value="Panitikan">
+
+Panitikan
+
+</option>
+
+
+<option value="Kultura">
+
+Kultura
+
+</option>
+
+
+<option value="Wika">
+
+Wika
+
+</option>
+
+
+<option value="Iba pa">
+
+Iba pa
+
+</option>
+
+
+</select>
+
+
+
+
+
+
+
+<input
+
+id="image"
+
+type="url"
+
+placeholder="Image URL (optional)"
+
+>
+
+
+
 
 
 
@@ -164,24 +290,29 @@ placeholder="Research Title"
 
 id="content"
 
-placeholder="Research Content">
+placeholder="Write research content here..."
 
-</textarea>
-
-
+></textarea>
 
 
-<button id="saveResearch">
 
-Save Research
+
+
+
+<button
+
+id="saveResearch"
+
+class="btn"
+
+>
+
+💾 Save Research
 
 </button>
 
 
 
-</div>
-
-
 </section>
 
 
@@ -190,27 +321,94 @@ Save Research
 
 
 
-<section class="section">
+
+
+<!-- ================= RESEARCH LIST ================= -->
+
+
+
+<section class="card">
 
 
 <h2>
 
-Research List
+📖 Research Library
 
 </h2>
 
 
 
-<div id="researchList">
+
+<div class="searchBox">
 
 
-Loading...
+<input
+
+id="searchResearch"
+
+placeholder="🔍 Search research..."
+
+>
+
+
+</div>
+
+
+
+
+
+
+<div
+
+id="researchList"
+
+class="researchGrid"
+
+>
+
+
+<div class="card">
+
+Loading researches...
+
+</div>
+
 
 </div>
 
 
 
 </section>
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 Magsikhay Research Portal
+
+<br>
+
+Admin Management System
+
+</p>
+
+
+</footer>
 
 
 
@@ -220,10 +418,15 @@ Loading...
 
 <script type="module" src="js/authGuard.js"></script>
 
+
 <script type="module" src="js/admin.js"></script>
+
+
+<script src="js/theme.js"></script>
 
 
 
 </body>
+
 
 </html>
