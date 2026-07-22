@@ -575,12 +575,459 @@ Magsikhay. Manaliksik. Makatao.
 
 
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Dalubwikaan Admin Dashboard
+</title>
+
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+</head>
+
+
+<body>
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+
+<div class="logo">
+
+📚 Dalubwikaan
+
+<span>
+Admin Portal
+</span>
+
+</div>
+
+
+
+<nav>
+
+
+<a class="active">
+
+📊 Dashboard
+
+</a>
+
+
+<a href="collections-admin.html">
+
+💰 Collections
+
+</a>
+
+
+
+<a href="expenses-admin.html">
+
+💸 Expenses
+
+</a>
+
+
+
+<a href="projects-admin.html">
+
+📂 Projects
+
+</a>
+
+
+
+<a href="announcements-admin.html">
+
+📢 Announcements
+
+</a>
+
+
+
+<a href="reports.html">
+
+📄 Reports
+
+</a>
+
+
+
+</nav>
+
+
+
+<button id="logoutBtn" class="logout">
+
+🚪 Logout
+
+</button>
+
+
+</aside>
+
+
+
+
+
+
+
+<!-- MAIN -->
+
+
+<main class="main">
+
+
+
+<header class="topbar">
+
+
+<div>
+
+<h1>
+
+Welcome back, Admin 👋
+
+</h1>
+
+
+<p>
+
+Magsikhay. Manaliksik. Makatao.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="actions">
+
+
+<button id="themeToggle">
+
+🌙
+
+</button>
+
+
+</div>
+
+
+
+</header>
+
+
+
+
+
+
+
+
+<!-- STAT CARDS -->
+
+
+<section class="stats">
+
+
+
+<div class="statCard">
+
+<div>
+
+💰
+
+</div>
+
+
+<h3>
+
+Total Collection
+
+</h3>
+
+
+<h2 id="totalCollection">
+
+₱0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<div class="statCard">
+
+<div>
+
+💸
+
+</div>
+
+
+<h3>
+
+Total Expenses
+
+</h3>
+
+
+<h2 id="totalExpenses">
+
+₱0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="statCard">
+
+<div>
+
+📂
+
+</div>
+
+
+<h3>
+
+Projects
+
+</h3>
+
+
+<h2 id="totalProjects">
+
+0
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="statCard">
+
+<div>
+
+📢
+
+</div>
+
+
+<h3>
+
+Announcements
+
+</h3>
+
+
+<h2 id="totalAnnouncements">
+
+0
+
+</h2>
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- QUICK ACTION -->
+
+
+<section class="dashboardGrid">
+
+
+
+<div class="panel">
+
+
+<h2>
+
+⚡ Quick Actions
+
+</h2>
+
+
+
+<div class="quick">
+
+
+<a href="collections-admin.html">
+
+➕ Add Collection
+
+</a>
+
+
+
+<a href="expenses-admin.html">
+
+➕ Add Expense
+
+</a>
+
+
+
+<a href="announcements-admin.html">
+
+📢 Announcement
+
+</a>
+
+
+
+<a href="reports.html">
+
+📄 Generate Report
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="panel">
+
+
+<h2>
+
+📌 Recent Activities
+
+</h2>
+
+
+<div id="activityFeed">
+
+
+Loading activities...
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- CHART AREA -->
+
+
+<section class="panel chartBox">
+
+
+<h2>
+
+📈 Financial Overview
+
+</h2>
+
+
+
+<canvas id="financeChart"></canvas>
+
+
+</section>
+
+
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/authGuard.js"></script>
 
 <script type="module" src="js/dashboard.js"></script>
 
-<script type="module" src="js/auth.js"></script>
 
-<script src="js/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</body>
+
+
+</html>
 
 
 
