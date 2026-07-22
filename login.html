@@ -8,203 +8,82 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>
-Dalubwikaan Admin Login
-</title>
-
+<title>Magsikhay Admin Login</title>
 
 
 <link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="css/login.css">
-
-
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
 
 </head>
 
 
-
-<body class="loginBody">
-
+<body>
 
 
+<section class="hero">
 
 
-<div class="loginContainer">
-
-
-
-<div class="loginBrand">
-
-
-<div class="bookIcon">
-
-📚
-
-</div>
-
-
-<h1>
-
-DALUBWIKAAN
-
-</h1>
-
-
-<p>
-
-Magsikhay.
-<br>
-
-Manaliksik.
-<br>
-
-Makatao.
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="loginCard">
+<div class="heroCard">
 
 
 <h2>
-
-Admin Portal
-
+🔐 Admin Access
 </h2>
 
 
 <p>
-
-Restricted Access
-
+Magsikhay Management Portal
 </p>
 
 
 
-
-
-<div class="inputGroup">
-
-
-<label>
-
-Email Address
-
-</label>
-
-
-<input
-
-type="email"
-
+<input 
 id="email"
-
-placeholder="admin@email.com"
-
+type="email"
+placeholder="Admin Email"
 >
 
 
-</div>
+
+<br><br>
 
 
-
-
-
-
-
-
-<div class="inputGroup">
-
-
-<label>
-
-Password
-
-</label>
-
-
-<input
-
-type="password"
-
+<input 
 id="password"
-
-placeholder="Enter password"
-
+type="password"
+placeholder="Password"
 >
 
 
-</div>
 
 
+<br><br>
 
 
+<button id="loginBtn">
 
-
-
-<button 
-class="loginBtn"
-
-onclick="loginAdmin()"
-
->
-
-
-🔐 Login
-
+Login
 
 </button>
 
 
 
 
-
-
-
-<div class="back">
-
-
-<a href="index.html">
-
-← Back to Website
-
-</a>
-
-</div>
-
-
-
+<p id="message"></p>
 
 
 </div>
 
 
-
-
-</div>
-
+</section>
 
 
 
 
 
-
-<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/login.js"></script>
 
 
 </body>
-
 
 </html>
