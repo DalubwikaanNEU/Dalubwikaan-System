@@ -1,20 +1,14 @@
 /* =====================================================
-   MAGSIKHAY PREMIUM DESIGN SYSTEM
-   MANALIKSIK. MAKATAO.
+   MAGSIKHAY DESIGN SYSTEM
+   MAIN CSS
 ===================================================== */
 
-
-/* ===============================
-   GLOBAL
-================================ */
 
 
 *{
 
 box-sizing:border-box;
-
 margin:0;
-
 padding:0;
 
 font-family:'Poppins',sans-serif;
@@ -23,48 +17,18 @@ font-family:'Poppins',sans-serif;
 
 
 
-html{
-
-scroll-behavior:smooth;
-
-}
-
-
-
 body{
 
-background:#f7f5ef;
+
+background:#f5f7fb;
 
 color:#222;
 
-transition:.4s;
-
-}
-
-
-
-
-
-a{
-
-text-decoration:none;
-
-color:inherit;
-
-}
-
-
-
-
-
-button{
-
-cursor:pointer;
-
-border:none;
+min-height:100vh;
 
 transition:.3s;
 
+
 }
 
 
@@ -72,16 +36,12 @@ transition:.3s;
 
 
 
-/* ===============================
-   HEADER
-================================ */
+/* ================= HEADER ================= */
 
 
+.adminHeader,
 header{
 
-width:100%;
-
-padding:20px 8%;
 
 display:flex;
 
@@ -89,17 +49,20 @@ justify-content:space-between;
 
 align-items:center;
 
-background:rgba(255,255,255,.75);
+padding:20px 5%;
 
-backdrop-filter:blur(15px);
+
+background:white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
 
 position:sticky;
 
 top:0;
 
-z-index:1000;
+z-index:10;
 
-box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 }
 
@@ -109,11 +72,13 @@ box-shadow:0 5px 20px rgba(0,0,0,.08);
 
 .logo{
 
-font-size:28px;
+
+font-size:24px;
 
 font-weight:700;
 
-color:#5a3515;
+color:#5b3a1a;
+
 
 }
 
@@ -121,47 +86,72 @@ color:#5a3515;
 
 
 
-nav{
+
+.adminActions{
+
 
 display:flex;
 
-align-items:center;
-
-gap:25px;
+gap:10px;
 
 }
 
 
 
-nav a{
 
-font-weight:500;
 
-position:relative;
+button{
+
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:600;
+
+transition:.3s;
+
 
 }
 
 
 
-nav a:hover{
 
-color:#8b5e34;
+button:hover{
+
+
+transform:translateY(-3px);
+
 
 }
 
 
+
+
+
+#logoutBtn{
+
+
+background:#b91c1c;
+
+color:white;
+
+
+}
 
 
 
 #themeToggle{
 
-background:#5a3515;
+
+background:#1f2937;
 
 color:white;
 
-padding:10px 15px;
-
-border-radius:50px;
 
 }
 
@@ -169,183 +159,69 @@ border-radius:50px;
 
 
 
-/* ===============================
- HERO
-================================ */
+
+
+
+/* ================= CONTAINER ================= */
+
+
+
+.container{
+
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+padding:40px 0;
+
+
+}
+
+
+
+
+
+
+
+/* ================= HERO ================= */
+
 
 
 .hero{
 
-min-height:90vh;
 
-padding:80px 8%;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:50px;
-
-}
-
-
-
-
-
-.heroText{
-
-max-width:600px;
-
-animation:slide .8s ease;
-
-}
-
-
-
-
-.heroText h1{
-
-font-size:70px;
-
-line-height:1.1;
-
-color:#4a2c12;
-
-}
-
-
-
-
-
-.heroText p{
-
-margin:25px 0;
-
-font-size:20px;
-
-color:#555;
-
-}
-
-
-
-
-.heroText button{
-
-padding:15px 35px;
-
-border-radius:50px;
-
-background:#8b5e34;
-
-color:white;
-
-font-size:16px;
-
-}
-
-
-
-
-.heroText button:hover{
-
-transform:translateY(-5px);
-
-}
-
-
-
-
-
-
-/* ===============================
- HERO CARD
-================================ */
-
-
-.heroCard{
-
-width:350px;
+text-align:center;
 
 padding:40px;
 
-border-radius:30px;
-
-background:white;
-
-box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-text-align:center;
-
-animation:float 4s infinite;
-
-}
+margin-bottom:30px;
 
 
+background:
 
-.heroCard h2{
+linear-gradient(
+135deg,
+#fff,
+#f3e8d3
+);
 
-margin:20px;
 
-color:#5a3515;
+border-radius:25px;
+
 
 }
 
 
 
 
-.heroCard:first-letter{
+.hero h1{
 
-font-size:70px;
-
-}
-
-
-
-
-
-
-/* ===============================
- SECTIONS
-================================ */
-
-
-.section{
-
-padding:80px 8%;
-
-text-align:center;
-
-}
-
-
-
-
-
-.section h2{
 
 font-size:40px;
 
-margin-bottom:20px;
-
-color:#4a2c12;
-
-}
-
-
-
-
-.section p{
-
-max-width:800px;
-
-margin:auto;
-
-font-size:18px;
-
-line-height:1.8;
 
 }
 
@@ -353,18 +229,43 @@ line-height:1.8;
 
 
 
-#researchList{
+.hero p{
 
-margin-top:40px;
+
+margin-top:10px;
+
+color:#555;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= DASHBOARD ================= */
+
+
+
+.dashboardGrid,
+.researchGrid{
+
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:
+
+repeat(auto-fit,minmax(250px,1fr));
+
 
 gap:25px;
 
-}
 
+}
 
 
 
@@ -372,15 +273,25 @@ gap:25px;
 
 .card{
 
+
 background:white;
 
-padding:30px;
+padding:25px;
+
 
 border-radius:25px;
 
-box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.08);
+
+
+margin-bottom:25px;
+
 
 transition:.3s;
+
 
 }
 
@@ -389,7 +300,29 @@ transition:.3s;
 
 .card:hover{
 
-transform:translateY(-10px);
+
+transform:translateY(-5px);
+
+
+box-shadow:
+
+0 20px 45px rgba(0,0,0,.12);
+
+
+}
+
+
+
+
+
+
+.card h2{
+
+
+margin-bottom:15px;
+
+color:#5b3a1a;
+
 
 }
 
@@ -399,75 +332,226 @@ transform:translateY(-10px);
 
 
 
-/* ===============================
- FOOTER
-================================ */
+
+
+/* ================= FORM ================= */
+
+
+
+input,
+textarea,
+select{
+
+
+width:100%;
+
+padding:15px;
+
+margin:10px 0;
+
+
+border-radius:15px;
+
+border:1px solid #ddd;
+
+
+font-size:15px;
+
+
+outline:none;
+
+
+}
+
+
+
+textarea{
+
+
+height:180px;
+
+resize:none;
+
+
+}
+
+
+
+
+
+
+input:focus,
+textarea:focus,
+select:focus{
+
+
+border-color:#8b5e34;
+
+
+}
+
+
+
+
+
+
+
+
+
+.btn{
+
+
+background:#8b5e34;
+
+color:white;
+
+
+}
+
+
+
+
+
+/* ================= SEARCH ================= */
+
+
+.searchBox{
+
+
+margin-bottom:20px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ================= RESEARCH CARD ================= */
+
+
+
+.researchGrid .card{
+
+
+background:white;
+
+
+}
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
 
 
 footer{
 
-padding:30px;
 
 text-align:center;
 
-background:#4a2c12;
+padding:30px;
+
+background:white;
+
+margin-top:40px;
+
+color:#555;
+
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+
+body.dark-mode{
+
+
+background:#111827;
 
 color:white;
 
+
 }
 
 
 
 
 
-/* ===============================
- DARK MODE
-================================ */
+body.dark-mode .card,
+body.dark-mode header,
+body.dark-mode footer{
 
 
-.dark-mode{
-
-background:#111;
+background:#1f2937;
 
 color:white;
 
-}
-
-
-
-
-.dark-mode header{
-
-background:rgba(20,20,20,.8);
 
 }
 
 
 
-.dark-mode .logo,
-.dark-mode .heroText h1,
-.dark-mode .section h2{
 
-color:#f5d6a0;
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select{
+
+
+background:#374151;
+
+color:white;
+
+border-color:#4b5563;
+
 
 }
 
 
 
-.dark-mode .heroText p{
+
+
+body.dark-mode .hero{
+
+
+background:
+
+linear-gradient(
+135deg,
+#1f2937,
+#374151
+);
+
+
+}
+
+
+
+
+
+body.dark-mode .hero p{
+
 
 color:#ddd;
 
-}
-
-
-
-.dark-mode .heroCard,
-.dark-mode .card{
-
-background:#1d1d1d;
-
-color:white;
 
 }
 
@@ -476,133 +560,81 @@ color:white;
 
 
 
-.dark-mode footer{
-
-background:#000;
-
-}
 
 
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
 
 
-
-/* ===============================
- ANIMATION
-================================ */
-
-
-@keyframes float{
-
-
-0%,100%{
-
-transform:translateY(0);
-
-}
-
-
-50%{
-
-transform:translateY(-20px);
-
-}
-
-
-}
+@media(max-width:700px){
 
 
 
-
-@keyframes slide{
-
-
-from{
-
-opacity:0;
-
-transform:translateX(-50px);
-
-}
-
-
-to{
-
-opacity:1;
-
-transform:translateX(0);
-
-}
-
-
-}
-
-
-
-
-
-/* ===============================
- MOBILE
-================================ */
-
-
-@media(max-width:768px){
-
-
-
+.adminHeader,
 header{
 
-flex-direction:column;
-
-gap:20px;
-
-}
-
-
-
-nav{
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-
-
-.hero{
 
 flex-direction:column;
+
+gap:15px;
 
 text-align:center;
 
-padding-top:50px;
 
 }
 
 
 
-.heroText h1{
+.logo{
 
-font-size:45px;
+
+font-size:20px;
+
 
 }
 
 
 
-.heroCard{
+.container{
 
-width:90%;
+
+width:94%;
+
 
 }
 
 
 
-.section h2{
+.hero h1{
 
-font-size:32px;
+
+font-size:28px;
+
 
 }
 
+
+
+button{
+
+
+width:100%;
+
+
+}
+
+
+
+.adminActions{
+
+
+width:100%;
+
+flex-direction:column;
+
+
+}
 
 
 }
