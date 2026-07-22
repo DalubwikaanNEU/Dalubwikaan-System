@@ -1,13 +1,10 @@
-import {
+// =====================================================
+// DALUBWIKAAN FIREBASE CONNECTION
+// =====================================================
 
-initializeApp
 
-}
-
-from
-
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 
 
 import {
@@ -15,11 +12,7 @@ import {
 getFirestore
 
 }
-
-from
-
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 
 import {
@@ -27,40 +20,44 @@ import {
 getAuth
 
 }
-
-from
-
-"https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 
 
 
+
+// ================= FIREBASE CONFIG =================
 
 
 const firebaseConfig = {
 
 
 apiKey:
-"AIzaSyDx5TR1iYZZsK4JqlvCmuR_0U6H1d3Mr80",
+"AIzaSyBzo7AfReNUHrXf0FEqfAW5h0oQ-fN1ij8",
+
 
 
 authDomain:
-"dalubwikaan--26-8e646.firebaseapp.com",
+"dalubwikaan-system.firebaseapp.com",
+
 
 
 projectId:
-"dalubwikaan--26-8e646",
+"dalubwikaan-system",
+
 
 
 storageBucket:
-"dalubwikaan--26-8e646.firebasestorage.app",
+"dalubwikaan-system.firebasestorage.app",
+
 
 
 messagingSenderId:
-"409516392020",
+"74868534824",
+
 
 
 appId:
-"1:409516392020:web:87d462a5927449c69eb7c1"
+"1:74868534824:web:06b15dacd299d69e754f1d"
 
 
 };
@@ -68,16 +65,26 @@ appId:
 
 
 
-
-const app =
-initializeApp(firebaseConfig);
+// ================= INITIALIZE =================
 
 
-
-export const db =
-getFirestore(app);
+const app = initializeApp(firebaseConfig);
 
 
 
-export const auth =
-getAuth(app);
+
+// FIRESTORE
+
+export const db = getFirestore(app);
+
+
+
+// AUTH
+
+export const auth = getAuth(app);
+
+
+
+console.log(
+"🔥 Dalubwikaan Firebase Connected"
+);
