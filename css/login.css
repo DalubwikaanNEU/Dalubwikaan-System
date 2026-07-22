@@ -1,0 +1,580 @@
+/* =====================================================
+DALUBWIKAAN LOGIN DESIGN
+login.css
+===================================================== */
+
+
+
+/* ===============================
+LOGIN BACKGROUND
+================================ */
+
+
+.loginBody{
+
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    background:
+
+    linear-gradient(
+
+        135deg,
+
+        #12372a,
+
+        #1d5b45,
+
+        #d4af37
+
+    );
+
+
+    font-family:'Poppins',sans-serif;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+CONTAINER
+================================ */
+
+
+.loginContainer{
+
+
+    width:100%;
+
+    max-width:1000px;
+
+
+    display:grid;
+
+
+    grid-template-columns:1fr 1fr;
+
+
+    gap:40px;
+
+
+    padding:30px;
+
+
+
+}
+
+
+
+
+
+
+
+/* ===============================
+BRAND SIDE
+================================ */
+
+
+.loginBrand{
+
+
+    color:white;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    animation:
+
+    slideLeft .8s ease;
+
+
+}
+
+
+
+.bookIcon{
+
+
+    font-size:100px;
+
+
+    animation:
+
+    float 3s infinite;
+
+
+}
+
+
+
+
+
+.loginBrand h1{
+
+
+    font-family:
+
+    'Cormorant Garamond',
+    serif;
+
+
+    font-size:65px;
+
+
+    color:#d4af37;
+
+
+    margin:10px 0;
+
+
+}
+
+
+
+.loginBrand p{
+
+
+    font-size:22px;
+
+
+    line-height:1.7;
+
+
+    letter-spacing:3px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+LOGIN CARD
+================================ */
+
+
+.loginCard{
+
+
+    background:
+
+    rgba(255,255,255,.15);
+
+
+    backdrop-filter:
+
+    blur(20px);
+
+
+    padding:45px;
+
+
+    border-radius:35px;
+
+
+    color:white;
+
+
+    box-shadow:
+
+
+    0 20px 60px rgba(0,0,0,.3);
+
+
+    animation:
+
+    slideUp .8s ease;
+
+
+}
+
+
+
+
+
+
+.loginCard h2{
+
+
+    font-size:35px;
+
+
+    margin-bottom:5px;
+
+
+}
+
+
+
+.loginCard p{
+
+
+    opacity:.8;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+
+
+
+/* ===============================
+INPUTS
+================================ */
+
+
+.inputGroup{
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+
+.inputGroup label{
+
+
+    display:block;
+
+
+    margin-bottom:8px;
+
+
+    font-size:14px;
+
+
+}
+
+
+
+.inputGroup input{
+
+
+    width:100%;
+
+
+    padding:15px 18px;
+
+
+    border:none;
+
+
+    outline:none;
+
+
+    border-radius:15px;
+
+
+    background:white;
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+BUTTON
+================================ */
+
+
+.loginBtn{
+
+
+    width:100%;
+
+
+    padding:16px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+    background:#d4af37;
+
+
+    color:#12372a;
+
+
+    font-size:17px;
+
+
+    font-weight:700;
+
+
+    cursor:pointer;
+
+
+    transition:.3s;
+
+
+}
+
+
+
+.loginBtn:hover{
+
+
+    transform:
+
+    translateY(-5px);
+
+
+    box-shadow:
+
+    0 15px 30px rgba(0,0,0,.2);
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+BACK LINK
+================================ */
+
+
+.back{
+
+
+    text-align:center;
+
+
+    margin-top:25px;
+
+
+}
+
+
+
+.back a{
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    opacity:.8;
+
+
+}
+
+
+.back a:hover{
+
+
+    color:#d4af37;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ===============================
+ANIMATIONS
+================================ */
+
+
+@keyframes slideUp{
+
+
+from{
+
+opacity:0;
+
+transform:
+translateY(40px);
+
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+
+}
+
+
+}
+
+
+
+@keyframes slideLeft{
+
+
+from{
+
+opacity:0;
+
+transform:
+translateX(-40px);
+
+
+}
+
+to{
+
+opacity:1;
+
+transform:
+translateX(0);
+
+
+}
+
+
+}
+
+
+
+
+
+@keyframes float{
+
+
+0%,100%{
+
+transform:
+translateY(0);
+
+
+}
+
+50%{
+
+transform:
+translateY(-20px);
+
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* ===============================
+MOBILE
+================================ */
+
+
+@media(max-width:800px){
+
+
+
+.loginContainer{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+.loginBrand{
+
+
+    text-align:center;
+
+
+}
+
+
+
+.loginBrand h1{
+
+
+    font-size:45px;
+
+
+}
+
+
+
+.bookIcon{
+
+
+    font-size:70px;
+
+
+}
+
+
+
+
+.loginCard{
+
+
+    padding:30px;
+
+
+}
+
+
+
+}
