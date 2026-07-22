@@ -1,20 +1,25 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 
 <head>
 
+
 <meta charset="UTF-8">
+
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dalubwikaan Admin Portal</title>
+
+<title>
+Magsikhay Admin Dashboard
+</title>
+
 
 
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/dashboard.css">
-<link rel="stylesheet" href="css/responsive.css">
 
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
 
 
 </head>
@@ -25,100 +30,14 @@
 
 
 
-<!-- ================= SIDEBAR ================= -->
-
-<aside class="sidebar">
+<header>
 
 
-<div class="brand">
+<div class="logo">
 
-
-<h1>
-📚 Dalubwikaan
-</h1>
-
-
-<p>
-Admin Portal
-</p>
-
+📚 MAGSIKHAY ADMIN
 
 </div>
-
-
-
-
-<nav>
-
-
-<a class="active">
-
-🏠 Dashboard
-
-</a>
-
-
-<a href="collections.html">
-
-💰 Collections
-
-</a>
-
-
-<a href="expenses.html">
-
-💸 Expenses
-
-</a>
-
-
-
-<a href="projects.html">
-
-📂 Projects
-
-</a>
-
-
-
-<a href="reports.html">
-
-📊 Reports
-
-</a>
-
-
-
-<a href="announcements.html">
-
-📢 Announcements
-
-</a>
-
-
-
-<a href="research.html">
-
-📖 Research Hub
-
-</a>
-
-
-
-</nav>
-
-
-
-
-
-<div class="sidebarBottom">
-
-
-<button id="themeToggle">
-
-🌙 Theme
-
-</button>
 
 
 
@@ -129,83 +48,6 @@ Admin Portal
 </button>
 
 
-</div>
-
-
-
-</aside>
-
-
-
-
-
-
-
-
-
-<!-- ================= MAIN ================= -->
-
-
-<main class="dashboardMain">
-
-
-
-<header class="topbar">
-
-
-<div>
-
-
-<h2>
-Magsikhay. Manaliksik. Makatao.
-</h2>
-
-
-<p>
-Maligayang pagdating, Dalub!👋
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="adminProfile">
-
-
-<div class="avatar">
-
-👤
-
-</div>
-
-
-
-<div>
-
-
-<strong id="adminName">
-
-Admin
-
-</strong>
-
-
-<small id="adminRole">
-
-Administrator
-
-</small>
-
-
-</div>
-
-
-</div>
-
-
 
 </header>
 
@@ -214,43 +56,22 @@ Administrator
 
 
 
-
-
-
-<!-- ================= HERO ================= -->
-
-
-<section class="heroCard">
-
-
-<div>
+<section class="section">
 
 
 <h1>
 
-Dalubwikaan Digital Portal
+Admin Dashboard
 
 </h1>
 
 
+
 <p>
 
-Isang makabagong sistema para sa
-pamamahala, pananaliksik, at paglilingkod.
+Manage researches, announcements, and content.
 
 </p>
-
-
-
-</div>
-
-
-
-<div class="heroIcon">
-
-📚
-
-</div>
 
 
 
@@ -261,609 +82,129 @@ pamamahala, pananaliksik, at paglilingkod.
 
 
 
+<section class="section">
 
 
 
-<!-- ================= STATISTICS ================= -->
+<div id="stats"
 
-
-<section class="statsGrid">
-
-
-
-<div class="statCard">
-
-
-<div class="icon">
-
-💰
-
-</div>
-
-
-<div>
-
-<h3>
-Total Collection
-</h3>
-
-
-<h1 id="totalCollection">
-
-₱0
-
-</h1>
-
-
-</div>
-
-
-</div>
+class="researchGrid">
 
 
 
+<div class="card">
+
+<h2>
+📚 Research
+</h2>
 
 
-
-<div class="statCard">
-
-
-<div class="icon">
-
-💸
-
-</div>
-
-
-<div>
-
-
-<h3>
-Total Expenses
-</h3>
-
-
-<h1 id="totalExpenses">
-
-₱0
-
-</h1>
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="statCard">
-
-
-<div class="icon">
-
-📂
-
-</div>
-
-
-<div>
-
-
-<h3>
-Active Projects
-</h3>
-
-
-<h1 id="totalProjects">
-
+<h1 id="researchCount">
 0
-
 </h1>
 
 
 </div>
 
 
-</div>
 
 
 
-
-
-
-
-<div class="statCard">
-
-
-<div class="icon">
-
-📢
-
-</div>
-
-
-<div>
-
-
-<h3>
-Announcements
-</h3>
-
-
-<h1 id="totalAnnouncements">
-
-0
-
-</h1>
-
-
-</div>
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ================= ANALYTICS ================= -->
-
-
-<section class="contentGrid">
-
-
-
-<div class="panel">
+<div class="card">
 
 
 <h2>
-📊 Financial Overview
-</h2>
-
-
-<div id="financialChart">
-
-
-<p>
-Loading analytics...
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="panel">
-
-
-<h2>
-🕒 Recent Activity
-</h2>
-
-
-<div id="activityLogs">
-
-
-<p>
-No recent activity.
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- ================= QUICK ACTION ================= -->
-
-
-<section class="panel">
-
-
-<h2>
-
-Quick Management
-
-</h2>
-
-
-
-<div class="quickGrid">
-
-
-
-<button onclick="location.href='collections.html'">
-
-➕ Add Collection
-
-</button>
-
-
-
-<button onclick="location.href='expenses.html'">
-
-➕ Add Expense
-
-</button>
-
-
-
-
-<button onclick="location.href='projects.html'">
-
-➕ Create Project
-
-</button>
-
-
-
-
-<button onclick="location.href='announcements.html'">
-
-📢 Post Announcement
-
-</button>
-
-
-
-</div>
-
-
-
-</section>
-
-
-
-
-
-
-
-
-<footer>
-
-
-<p>
-
-© 2026 Dalubwikaan
-
-<br>
-
-Magsikhay. Manaliksik. Makatao.
-
-</p>
-
-
-</footer>
-
-
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-Dalubwikaan Admin Dashboard
-</title>
-
-
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/admin.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-
-</head>
-
-
-<body>
-
-
-
-<!-- SIDEBAR -->
-
-<aside class="sidebar">
-
-
-<div class="logo">
-
-📚 Dalubwikaan
-
-<span>
-Admin Portal
-</span>
-
-</div>
-
-
-
-<nav>
-
-
-<a class="active">
-
-📊 Dashboard
-
-</a>
-
-
-<a href="collections-admin.html">
-
-💰 Collections
-
-</a>
-
-
-
-<a href="expenses-admin.html">
-
-💸 Expenses
-
-</a>
-
-
-
-<a href="projects-admin.html">
-
-📂 Projects
-
-</a>
-
-
-
-<a href="announcements-admin.html">
-
 📢 Announcements
-
-</a>
-
+</h2>
 
 
-<a href="reports.html">
-
-📄 Reports
-
-</a>
-
-
-
-</nav>
-
-
-
-<button id="logoutBtn" class="logout">
-
-🚪 Logout
-
-</button>
-
-
-</aside>
-
-
-
-
-
-
-
-<!-- MAIN -->
-
-
-<main class="main">
-
-
-
-<header class="topbar">
-
-
-<div>
-
-<h1>
-
-Welcome back, Admin 👋
-
+<h1 id="announcementCount">
+0
 </h1>
 
 
-<p>
+</div>
 
-Magsikhay. Manaliksik. Makatao.
 
-</p>
 
 
 </div>
 
 
 
+</section>
 
 
-<div class="actions">
 
 
-<button id="themeToggle">
 
-🌙
+
+
+<section class="section">
+
+
+<div class="card">
+
+
+<h2>
+✍️ Add Research
+</h2>
+
+
+
+<input 
+id="title"
+placeholder="Research Title"
+>
+
+
+
+
+<textarea
+
+id="content"
+
+placeholder="Research Content">
+
+</textarea>
+
+
+
+
+<button id="saveResearch">
+
+Save Research
 
 </button>
 
 
-</div>
-
-
-
-</header>
-
-
-
-
-
-
-
-
-<!-- STAT CARDS -->
-
-
-<section class="stats">
-
-
-
-<div class="statCard">
-
-<div>
-
-💰
 
 </div>
 
 
-<h3>
-
-Total Collection
-
-</h3>
+</section>
 
 
-<h2 id="totalCollection">
 
-₱0
+
+
+
+
+<section class="section">
+
+
+<h2>
+
+Research List
 
 </h2>
 
 
-</div>
+
+<div id="researchList">
 
 
-
-
-
-
-<div class="statCard">
-
-<div>
-
-💸
-
-</div>
-
-
-<h3>
-
-Total Expenses
-
-</h3>
-
-
-<h2 id="totalExpenses">
-
-₱0
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="statCard">
-
-<div>
-
-📂
-
-</div>
-
-
-<h3>
-
-Projects
-
-</h3>
-
-
-<h2 id="totalProjects">
-
-0
-
-</h2>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="statCard">
-
-<div>
-
-📢
-
-</div>
-
-
-<h3>
-
-Announcements
-
-</h3>
-
-
-<h2 id="totalAnnouncements">
-
-0
-
-</h2>
-
+Loading...
 
 </div>
 
@@ -876,162 +217,13 @@ Announcements
 
 
 
-
-
-
-
-<!-- QUICK ACTION -->
-
-
-<section class="dashboardGrid">
-
-
-
-<div class="panel">
-
-
-<h2>
-
-⚡ Quick Actions
-
-</h2>
-
-
-
-<div class="quick">
-
-
-<a href="collections-admin.html">
-
-➕ Add Collection
-
-</a>
-
-
-
-<a href="expenses-admin.html">
-
-➕ Add Expense
-
-</a>
-
-
-
-<a href="announcements-admin.html">
-
-📢 Announcement
-
-</a>
-
-
-
-<a href="reports.html">
-
-📄 Generate Report
-
-</a>
-
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="panel">
-
-
-<h2>
-
-📌 Recent Activities
-
-</h2>
-
-
-<div id="activityFeed">
-
-
-Loading activities...
-
-
-</div>
-
-
-</div>
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-<!-- CHART AREA -->
-
-
-<section class="panel chartBox">
-
-
-<h2>
-
-📈 Financial Overview
-
-</h2>
-
-
-
-<canvas id="financeChart"></canvas>
-
-
-</section>
-
-
-
-
-
-
-
-</main>
-
-
-
-
-
-
-
-<script type="module" src="js/firebase.js"></script>
 
 <script type="module" src="js/authGuard.js"></script>
 
-<script type="module" src="js/dashboard.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-
-</body>
-
-
-</html>
+<script type="module" src="js/admin.js"></script>
 
 
 
 </body>
-
 
 </html>
